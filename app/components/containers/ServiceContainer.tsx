@@ -10,8 +10,8 @@ export default function ServiceContainer({ service }: ServiceContainerProps) {
       <h3 className="text-xl sm:text-2xl font-headline font-bold mb-4 text-on-surface">
         {service.title}
       </h3>
-      <p className="text-on-surface-variant text-sm leading-relaxed mb-6">{service.description}</p>
-      <div className="flex flex-col mt-auto pt-4 border-t border-outline-variant/15cs321432415 text-primary text-xs font-bold gap-2">
+      <p className="text-on-surface-variant text-sm mb-6">{service.description}</p>
+      <div className="flex flex-col mt-auto pt-4 border-t border-outline-variant/15cs321432415 text-primary text-xs font-bold">
         {service.bullets.map((bullet) => (
           <span className="material-symbols-outlined text-sm">{bullet}</span>
         ))}
@@ -19,4 +19,3 @@ export default function ServiceContainer({ service }: ServiceContainerProps) {
     </div>
   );
 }
-//<span className="material-symbols-outlined text-sm">{service.bullets}</span>

@@ -3,7 +3,7 @@ import Image from "next/image";
 import { useState } from "react";
 import ArchitectureSection from "./sections/Architecture";
 import Services from "./sections/services";
-import LifeCycle from "./sections/LifeCycle";
+import LifeCycle from "./sections/LifeCycleSection";
 import Cta from "./sections/Cta";
 export default function Home() {
   return (

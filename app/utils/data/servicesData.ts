@@ -10,7 +10,7 @@ export interface Service {
 export const services: Service[] = [
   {
     id: 1,
-    icon: "layers",
+    icon: "Layers",
     title: "Digital Presence & Discovery",
     headline: "Be where your customers are.",
     description:
@@ -23,7 +23,7 @@ export const services: Service[] = [
   },
   {
     id: 2,
-    icon: "hub",
+    icon: "Hub",
     title: "Process Automation & Integration",
     headline: "Do more with less.",
     description:
@@ -36,7 +36,7 @@ export const services: Service[] = [
   },
   {
     id: 3,
-    icon: "dashboard",
+    icon: "Dashboard",
     title: "Custom Tools & Dashboards",
     headline: "Your business, your tools.",
     description:
@@ -49,7 +49,7 @@ export const services: Service[] = [
   },
   {
     id: 4,
-    icon: "architecture",
+    icon: "Architecture",
     title: "Technical Consulting & Strategy",
     headline: "Set a tech direction that lasts.",
     description:
@@ -62,7 +62,7 @@ export const services: Service[] = [
   },
   {
     id: 5,
-    icon: "security",
+    icon: "Security",
     title: "Quality & Security Engineering",
     headline: "Build on a rock-solid foundation.",
     description:
@@ -75,7 +75,7 @@ export const services: Service[] = [
   },
   {
     id: 6,
-    icon: "support_agent",
+    icon: "Support Agent",
     title: "Continuous Support & Growth",
     headline: "Your tech partner as you evolve.",
     description:
