@@ -1,4 +1,16 @@
+"use-client";
+import { useState } from "react";
+import ContactForm from "../components/modals/ContactForm";
 export default function Cta() {
+  const [formModal, setFormModal] = useState<boolean>(false);
+  const FormModalClick = () => {
+    if (formModal === false) {
+      setFormModal(true);
+    }
+  };
+  const OnClose = () => {
+    setFormModal(false);
+  };
   return (
     <section className="px-8 py-24">
       <div className="max-w-7xl mx-auto bg-gradient-to-br from-surface-container-high to-surface-container-lowest p-16 relative overflow-hidden text-center">
@@ -18,15 +30,16 @@ export default function Cta() {
             2024.
           </p>
           <div className="flex flex-col sm:flex-row justify-center gap-6">
-            <button className="bg-primary text-on-primary px-12 py-5 font-bold text-lg hover:shadow-[0_0_30px_rgba(56,189,248,0.5)] transition-all">
+            <button
+              onClick={FormModalClick}
+              className="bg-primary text-on-primary px-12 py-5 font-bold text-lg hover:shadow-[0_0_30px_rgba(56,189,248,0.5)] transition-all"
+            >
               Schedule Consultation
-            </button>
-            <button className="border border-primary text-primary px-12 py-5 font-bold text-lg hover:bg-primary/10 transition-all">
-              Download Portfolio
             </button>
           </div>
         </div>
-      </div>
+      </div>{" "}
+      {formModal && <ContactForm onClose={OnClose} />}
     </section>
   );
 }

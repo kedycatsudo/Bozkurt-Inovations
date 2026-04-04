@@ -1,6 +1,16 @@
-import Image from "next/image";
-
+"use client";
+import { useState } from "react";
+import ContactForm from "../components/modals/ContactForm";
 export default function ArchitectureSection() {
+  const [formModal, setFormModal] = useState<boolean>(false);
+  const FormModalClick = () => {
+    if (formModal === false) {
+      setFormModal(true);
+    }
+  };
+  const OnClose = () => {
+    setFormModal(false);
+  };
   return (
     <section className="px-20 sm:px-8 max-w-7xl overflow-hidden">
       <div className="grid lg:grid-cols-2 gap-12 items-center">
@@ -16,15 +26,21 @@ export default function ArchitectureSection() {
           </h1>
           <p className="text-lg text-on-surface-variant max-w-xl mb-10 leading-relaxed">
             Precision-engineered software solutions that bridge technical logic with business
-            strategy. We build scalable, high-performance infrastructures designed for tomorrow.
+            strategy. I build scalable, high-performance infrastructures designed for tomorrow.
           </p>
           <div className="flex flex-wrap gap-4">
-            <button className="bg-gradient-to-br from-primary to-primary-container text-on-primary px-8 py-4 font-bold text-lg rounded-DEFAULT hover:shadow-[0_0_20px_rgba(56,189,248,0.4)] transition-all">
-              View Ledger
+            <button
+              onClick={FormModalClick}
+              className="bg-gradient-to-br from-primary to-primary-container text-on-primary px-8 py-4 font-bold text-lg rounded-DEFAULT hover:shadow-[0_0_20px_rgba(56,189,248,0.4)] transition-all"
+            >
+              Contact with me
             </button>
-            <button className="border border-outline-variant/30 text-primary px-8 py-4 font-bold text-lg rounded-DEFAULT hover:bg-surface-container-highest transition-all">
-              Our Process
-            </button>
+            <a
+              href="https://kedycatsudo.github.io/newPortfolio/"
+              className="border border-outline-variant/30 text-primary px-8 py-4 font-bold text-lg rounded-DEFAULT hover:bg-surface-container-highest transition-all"
+            >
+              Portfolio
+            </a>
           </div>
         </div>
         <div className="relative lg:h-[600px] hidden lg:block">
@@ -48,6 +64,7 @@ export default function ArchitectureSection() {
           </div>
         </div>
       </div>
+      {formModal && <ContactForm onClose={OnClose} />}
     </section>
   );
 }
