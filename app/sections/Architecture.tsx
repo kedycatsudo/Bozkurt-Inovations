@@ -4,9 +4,8 @@ import ContactForm from "../components/modals/ContactForm";
 export default function ArchitectureSection() {
   const [formModal, setFormModal] = useState<boolean>(false);
   const FormModalClick = () => {
-    if (formModal === false) {
-      setFormModal(true);
-    }
+    setFormModal(true);
+    console.log(formModal);
   };
   const OnClose = () => {
     setFormModal(false);
@@ -30,6 +29,7 @@ export default function ArchitectureSection() {
           </p>
           <div className="flex flex-wrap gap-4">
             <button
+              type="button"
               onClick={FormModalClick}
               className="bg-gradient-to-br from-primary to-primary-container text-on-primary px-8 py-4 font-bold text-lg rounded-DEFAULT hover:shadow-[0_0_20px_rgba(56,189,248,0.4)] transition-all"
             >
@@ -37,6 +37,8 @@ export default function ArchitectureSection() {
             </button>
             <a
               href="https://kedycatsudo.github.io/newPortfolio/"
+              target="_blank"
+              rel="noopener noreferrer"
               className="border border-outline-variant/30 text-primary px-8 py-4 font-bold text-lg rounded-DEFAULT hover:bg-surface-container-highest transition-all"
             >
               Portfolio

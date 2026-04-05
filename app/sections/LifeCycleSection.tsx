@@ -4,22 +4,21 @@ export default function CircularLifecycle() {
     <section className="px-20 sm:px-8 max-w-7xl overflow-hidden bg-background">
       <div className="max-w-7xl mx-auto">
         <div className="text-center mb-16 lg:mb-0">
-          <h2 className="text-3xl sm:text-4xl lg:text-[3.5rem] font-headline font-bold mb-4 pt-5">
+          <h2 className="text-3xl sm:text-4xl lg:text-[3.5rem] font-headline font-bold mb-4 pt-5 pb-10">
             The Development Lifecycle
           </h2>
           <div className="h-1 w-24 bg-primary mx-auto mb-12" />
         </div>
 
         {/* Desktop Circle */}
-        <div className="hidden lg:block circle-container scale-75 xl:scale-100 origin-center -mt-20">
-          <div className="arrow-path"></div>
+        <div className="hidden lg:block circle-container scale-75 xl:scale-100 origin-center">
           {Cycles.map((step, i) => (
             <div className={`step-node node-${i} text-center group`} key={step.title}>
               <div className="w-24 h-24 mx-auto rounded-xl bg-surface-container-high border border-primary/30 flex items-center justify-center mb-6 shadow-[0_0_20px_rgba(142,213,255,0.05)] group-hover:border-primary group-hover:shadow-[0_0_30px_rgba(142,213,255,0.2)] transition-all">
                 <span className="text-3xl font-headline font-bold text-primary">{step.id}</span>
               </div>
               <h4 className="text-xl font-headline font-bold mb-3 text-on-surface">{step.title}</h4>
-              <p className="text-xs text-on-surface-variant leading-relaxed max-w-[240px] mx-auto">
+              <p className="text-xs sm:text-lg text-on-surface-variant leading-relaxed max-w-[240px] mx-auto">
                 {step.description}
               </p>
               {/* Show arrow unless last node */}

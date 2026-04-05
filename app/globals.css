@@ -32,12 +32,6 @@ body {
   font-family: "Inter", sans-serif;
   overflow-x: hidden;
 }
-.modal-backdrop {
-  display: none;
-}
-.modal-backdrop.active {
-  display: flex;
-}
 
 /* Circular Layout Classes */
 @media (min-width: 1024px) {
