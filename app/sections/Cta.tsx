@@ -12,7 +12,7 @@ export default function Cta() {
     setFormModal(false);
   };
   return (
-    <section className="px-8 py-24">
+    <section className=" py-24 ">
       <div className="max-w-7xl mx-auto bg-gradient-to-br from-surface-container-high to-surface-container-lowest p-16 relative overflow-hidden text-center">
         <div className="absolute inset-0 opacity-10 pointer-events-none">
           <img

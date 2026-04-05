@@ -19,3 +19,115 @@ body {
   color: var(--foreground);
   font-family: Arial, Helvetica, sans-serif;
 }
+.material-symbols-outlined {
+  font-variation-settings:
+    "FILL" 0,
+    "wght" 400,
+    "GRAD" 0,
+    "opsz" 24;
+}
+body {
+  background-color: #0b1326;
+  color: #dae2fd;
+  font-family: "Inter", sans-serif;
+  overflow-x: hidden;
+}
+.modal-backdrop {
+  display: none;
+}
+.modal-backdrop.active {
+  display: flex;
+}
+
+/* Circular Layout Classes */
+@media (min-width: 1024px) {
+  .circle-container {
+    position: relative;
+    width: 1000px;
+    height: 1000px;
+    margin: 0 auto;
+  }
+  .step-node {
+    position: absolute;
+    width: 280px;
+    transform: translate(-50%, -50%);
+  }
+  /* Positioning logic for 5 items in a circle/arc */
+  /* 0: -90deg (top), 1: -18deg, 2: 54deg, 3: 126deg, 4: 198deg approx */
+  /* Using coordinates on a 1000x1000 box with center 500,500 and radius 400 */
+  .node-0 {
+    top: 10%;
+    left: 50%;
+  }
+  .node-1 {
+    top: 35%;
+    left: 88%;
+  }
+  .node-2 {
+    top: 80%;
+    left: 75%;
+  }
+  .node-3 {
+    top: 80%;
+    left: 25%;
+  }
+  .node-4 {
+    top: 35%;
+    left: 12%;
+  }
+
+  .arrow-path {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 70%;
+    height: 70%;
+    border: 2px dashed rgba(56, 189, 248, 0.15);
+    border-radius: 50%;
+    z-index: 0;
+  }
+}
+/* Only the custom CSS needed for desktop circular layout */
+.circle-container {
+  position: relative;
+  width: 1000px;
+  height: 1000px;
+  margin: 0 auto;
+}
+.step-node {
+  position: absolute;
+  width: 280px;
+  transform: translate(-50%, -50%);
+}
+.node-0 {
+  top: 10%;
+  left: 50%;
+}
+.node-1 {
+  top: 35%;
+  left: 88%;
+}
+.node-2 {
+  top: 80%;
+  left: 75%;
+}
+.node-3 {
+  top: 80%;
+  left: 25%;
+}
+.node-4 {
+  top: 35%;
+  left: 12%;
+}
+.arrow-path {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 70%;
+  height: 70%;
+  border: 2px dashed rgba(56, 189, 248, 0.15);
+  border-radius: 50%;
+  z-index: 0;
+}
