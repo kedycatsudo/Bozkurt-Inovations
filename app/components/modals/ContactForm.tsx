@@ -34,36 +34,36 @@ export default function ContactForm({ onClose }: ContactFormProps) {
 
   return (
     <div
-      className="modal-backdrop fixed inset-0 z-[100] flex items-center justify-center overflow-y-auto p-4 bg-background/90 backdrop-blur-md"
+      className="modal-backdrop fixed inset-0 z-[100] flex items-center justify-center overflow-y-auto p-2 sm:p-4 bg-background/90 backdrop-blur-md"
       id="consultation-modal"
     >
-      <div className="bg-surface-container-high w-full max-w-xl border border-outline-variant/30 shadow-2xl relative">
+      <div className="bg-surface-container-high w-full max-w-xl border border-outline-variant/30 shadow-2xl relative max-h-[90vh] overflow-y-auto">
         <button
           onClick={onClose}
-          className="absolute top-4 right-4 text-on-surface-variant hover:text-primary transition-colors"
+          className="absolute top-2 right-2 sm:top-4 sm:right-4 text-on-surface-variant hover:text-primary transition-colors z-10 p-1"
           type="button"
           aria-label="Close modal"
           disabled={sending}
         >
-          <span className="material-symbols-outlined text-2xl">X</span>
+          <span className="material-symbols-outlined text-xl sm:text-2xl">X</span>
         </button>
 
-        <div className="p-10">
-          <h3 className="text-3xl font-headline font-bold mb-2">Technical Audit</h3>
-          <p className="text-on-surface-variant text-sm mb-8">
+        <div className="p-3 sm:p-10">
+          <h3 className="text-lg sm:text-3xl font-headline font-bold">Technical Audit</h3>
+          <p className="text-on-surface-variant text-xs sm:text-sm ">
             Tell us about your project requirements and we&apos;ll reach out within 24 hours.
           </p>
 
-          <form className="space-y-5" onSubmit={handleSubmit}>
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
-              <div className="space-y-2">
+          <form className="space-y-3 sm:space-y-5" onSubmit={handleSubmit}>
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-3 sm:gap-5">
+              <div className="space-y-1 sm:space-y-2">
                 <label className="text-xs uppercase tracking-widest font-bold text-primary">
                   Full Name
                 </label>
                 <input
                   required
                   name="fullName"
-                  className="w-full bg-surface-container-lowest border border-outline-variant/20 px-4 py-3 text-on-surface focus:outline-none focus:border-primary transition-colors rounded"
+                  className="w-full bg-surface-container-lowest border border-outline-variant/20 px-3 py-2 sm:px-4 sm:py-3 text-sm sm:text-base text-on-surface focus:outline-none focus:border-primary transition-colors rounded"
                   placeholder="Jane Doe"
                   type="text"
                   value={fields.fullName}
@@ -72,14 +72,14 @@ export default function ContactForm({ onClose }: ContactFormProps) {
                 />
               </div>
 
-              <div className="space-y-2">
+              <div className="space-y-1 sm:space-y-2">
                 <label className="text-xs uppercase tracking-widest font-bold text-primary">
                   Phone Number
                 </label>
                 <input
                   required
                   name="phoneNumber"
-                  className="w-full bg-surface-container-lowest border border-outline-variant/20 px-4 py-3 text-on-surface focus:outline-none focus:border-primary transition-colors rounded"
+                  className="w-full bg-surface-container-lowest border border-outline-variant/20 px-3 py-2 sm:px-4 sm:py-3 text-sm sm:text-base text-on-surface focus:outline-none focus:border-primary transition-colors rounded"
                   placeholder="+1 (555) 000-0000"
                   type="tel"
                   value={fields.phoneNumber}
@@ -89,15 +89,15 @@ export default function ContactForm({ onClose }: ContactFormProps) {
               </div>
             </div>
 
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
-              <div className="space-y-2">
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-3 sm:gap-5">
+              <div className="space-y-1 sm:space-y-2">
                 <label className="text-xs uppercase tracking-widest font-bold text-primary">
                   Email Address
                 </label>
                 <input
                   required
                   name="emailAddress"
-                  className="w-full bg-surface-container-lowest border border-outline-variant/20 px-4 py-3 text-on-surface focus:outline-none focus:border-primary transition-colors rounded"
+                  className="w-full bg-surface-container-lowest border border-outline-variant/20 px-3 py-2 sm:px-4 sm:py-3 text-sm sm:text-base text-on-surface focus:outline-none focus:border-primary transition-colors rounded"
                   placeholder="jane@company.com"
                   type="email"
                   value={fields.emailAddress}
@@ -106,14 +106,14 @@ export default function ContactForm({ onClose }: ContactFormProps) {
                 />
               </div>
 
-              <div className="space-y-2">
+              <div className="space-y-1 sm:space-y-2">
                 <label className="text-xs uppercase tracking-widest font-bold text-primary">
                   Location
                 </label>
                 <input
                   required
                   name="location"
-                  className="w-full bg-surface-container-lowest border border-outline-variant/20 px-4 py-3 text-on-surface focus:outline-none focus:border-primary transition-colors rounded"
+                  className="w-full bg-surface-container-lowest border border-outline-variant/20 px-3 py-2 sm:px-4 sm:py-3 text-sm sm:text-base text-on-surface focus:outline-none focus:border-primary transition-colors rounded"
                   placeholder="City, Country"
                   type="text"
                   value={fields.location}
@@ -123,25 +123,25 @@ export default function ContactForm({ onClose }: ContactFormProps) {
               </div>
             </div>
 
-            <div className="space-y-2">
+            <div className="space-y-1 sm:space-y-2">
               <label className="text-xs uppercase tracking-widest font-bold text-primary">
                 Describe your idea or problem
               </label>
               <textarea
                 required
                 name="message"
-                className="w-full bg-surface-container-lowest border border-outline-variant/20 px-4 py-3 text-on-surface focus:outline-none focus:border-primary transition-colors rounded resize-none"
+                className="w-full bg-surface-container-lowest border border-outline-variant/20 px-3 py-2 sm:px-4 sm:py-3 text-sm sm:text-base text-on-surface focus:outline-none focus:border-primary transition-colors rounded resize-none"
                 placeholder="Share a few details about what you're looking to build..."
-                rows={6}
+                rows={3}
                 value={fields.message}
                 onChange={handleChange}
                 disabled={sending}
               />
             </div>
 
-            <div className="space-y-3 pt-2">
+            <div className="flex flex-col justify-center items-center">
               <button
-                className="w-full bg-primary text-on-primary py-4 font-bold text-lg hover:shadow-[0_0_20px_rgba(56,189,248,0.4)] transition-all"
+                className="w-full bg-primary text-on-primary py-1 sm:py-4 font-bold text-base sm:text-lg hover:shadow-[0_0_20px_rgba(56,189,248,0.4)] transition-all"
                 type="submit"
                 disabled={sending}
               >

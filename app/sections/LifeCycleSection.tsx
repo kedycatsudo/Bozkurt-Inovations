@@ -5,7 +5,7 @@ export default function CircularLifecycle() {
       <div className="max-w-7xl mx-auto">
         <div className="text-center mb-16 lg:mb-0">
           <h2 className="text-3xl sm:text-4xl lg:text-[3.5rem] font-headline font-bold mb-4 pt-5 pb-10">
-            The Development Lifecycle
+            Development Lifecycle
           </h2>
           <div className="h-1 w-24 bg-primary mx-auto mb-12" />
         </div>

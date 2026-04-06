@@ -26,8 +26,7 @@ export default function Cta() {
             Let's build your next big idea.
           </h2>
           <p className="text-xl text-on-surface-variant mb-12 max-w-2xl mx-auto">
-            Available for selective partnerships and large-scale technical consulting starting Q3
-            2024.
+            Available for selective partnerships and large-scale technical consulting.
           </p>
           <div className="flex flex-col sm:flex-row justify-center gap-6">
             <button
