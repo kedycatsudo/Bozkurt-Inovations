@@ -1,8 +1,8 @@
 import { Cycles } from "../utils/data/devCycle";
 export default function CircularLifecycle() {
   return (
-    <section className="px-20 sm:px-8 max-w-7xl overflow-hidden bg-background">
-      <div className="max-w-7xl mx-auto">
+    <section className="px-5 sm:px-8 max-w-7xl bg-background">
+      <div className=" mx-auto">
         <div className="text-center mb-16 lg:mb-0">
           <h2 className="text-3xl sm:text-4xl lg:text-[3.5rem] font-headline font-bold mb-4 pt-5 pb-10">
             Development Lifecycle
@@ -17,8 +17,10 @@ export default function CircularLifecycle() {
               <div className="w-24 h-24 mx-auto rounded-xl bg-surface-container-high border border-primary/30 flex items-center justify-center mb-6 shadow-[0_0_20px_rgba(142,213,255,0.05)] group-hover:border-primary group-hover:shadow-[0_0_30px_rgba(142,213,255,0.2)] transition-all">
                 <span className="text-3xl font-headline font-bold text-primary">{step.id}</span>
               </div>
-              <h4 className="text-xl font-headline font-bold mb-3 text-on-surface">{step.title}</h4>
-              <p className="text-xs sm:text-lg text-on-surface-variant leading-relaxed max-w-[240px] mx-auto">
+              <h4 className="text-3xl font-headline font-bold mb-3 text-on-surface">
+                {step.title}
+              </h4>
+              <p className="text-xxl sm:text-lg text-on-surface-variant leading-relaxed max-w-[240px] mx-auto">
                 {step.description}
               </p>
               {/* Show arrow unless last node */}
@@ -45,8 +47,10 @@ export default function CircularLifecycle() {
               <div className="w-20 h-20 rounded-xl bg-surface-container-high border border-primary/30 flex items-center justify-center mb-6">
                 <span className="text-2xl font-headline font-bold text-primary">{step.id}</span>
               </div>
-              <h4 className="text-xl font-headline font-bold mb-4 text-on-surface">{step.title}</h4>
-              <p className="text-sm text-on-surface-variant leading-relaxed">{step.description}</p>
+              <h4 className="text-2xl font-headline font-bold mb-4 text-on-surface">
+                {step.title}
+              </h4>
+              <p className="text-lg text-on-surface-variant leading-relaxed">{step.description}</p>
             </div>
           ))}
         </div>

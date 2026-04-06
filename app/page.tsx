@@ -5,8 +5,8 @@ import LifeCycle from "./sections/LifeCycleSection";
 import Cta from "./sections/Cta";
 export default function Home() {
   return (
-    <div className="flex flex-col flex-1 items-center justify-center bg-zinc-50 font-sans dark:bg-[#0F172A]">
-      <header>
+    <div className="flex min-h-screen w-full flex-col items-center justify-center bg-zinc-50 font-sans dark:bg-[#0F172A]">
+      <header className="w-full py-4 text-center">
         <div className="flex items-center justify-center gap-4 sm:gap-6">
           <a
             href="https://github.com/kedycatsudo"
@@ -34,7 +34,7 @@ export default function Home() {
           </a>
         </div>
       </header>
-      <main className=" pt-2 background bg-[#0F172A] ">
+      <main className="w-full pt-2 bg-[#0F172A] [&>section]:mx-auto">
         <ArchitectureSection></ArchitectureSection>
         <Services></Services>
         <LifeCycle></LifeCycle>

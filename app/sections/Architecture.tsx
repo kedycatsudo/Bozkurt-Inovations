@@ -11,7 +11,7 @@ export default function ArchitectureSection() {
     setFormModal(false);
   };
   return (
-    <section className="px-20 sm:px-8 max-w-7xl overflow-hidden">
+    <section className="py-10 px-5 sm:px-8">
       <div className="grid lg:grid-cols-2 gap-12 items-center">
         <div className="z-10">
           <span className="label-md uppercase tracking-[0.2em] text-primary font-bold mb-6 block font-label">
@@ -23,7 +23,7 @@ export default function ArchitectureSection() {
               Modern Web.
             </span>
           </h1>
-          <p className="text-lg text-on-surface-variant max-w-xl mb-10 leading-relaxed">
+          <p className="text-xl text-on-surface-variant max-w-xl mb-10 leading-relaxed">
             Precision-engineered software solutions that bridge technical logic with business
             strategy. I build scalable, high-performance infrastructures designed for tomorrow.
           </p>
