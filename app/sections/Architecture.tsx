@@ -5,7 +5,6 @@ export default function ArchitectureSection() {
   const [formModal, setFormModal] = useState<boolean>(false);
   const FormModalClick = () => {
     setFormModal(true);
-    console.log(formModal);
   };
   const OnClose = () => {
     setFormModal(false);

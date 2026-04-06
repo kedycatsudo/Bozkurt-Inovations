@@ -6,6 +6,32 @@ type ContactFormProps = {
 };
 
 export default function ContactForm({ onClose }: ContactFormProps) {
+  const [fields, setFields] = useState({
+    fullName: "",
+    phoneNumber: "",
+    emailAddress: "",
+    location: "",
+    message: "",
+  });
+  const [sending, setSending] = useState(false);
+  const [result, setResult] = useState<null | "success" | "error">(null);
+  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+    setFields({ ...fields, [e.target.name]: e.target.value });
+  };
+  async function handleSubmit(e: React.FormEvent) {
+    e.preventDefault();
+    setSending(true);
+    setResult(null);
+    const res = await fetch("/api/contact", {
+      method: "POST",
+      body: JSON.stringify(fields),
+      headers: { "Content-Type": "application/json" },
+    });
+    setSending(false);
+    if (res.ok) setResult("success");
+    else setResult("error");
+  }
+
   return (
     <div
       className="modal-backdrop fixed inset-0 z-[100] flex items-center justify-center overflow-y-auto p-4 bg-background/90 backdrop-blur-md"
@@ -16,74 +42,116 @@ export default function ContactForm({ onClose }: ContactFormProps) {
           onClick={onClose}
           className="absolute top-4 right-4 text-on-surface-variant hover:text-primary transition-colors"
           type="button"
+          aria-label="Close modal"
+          disabled={sending}
         >
           <span className="material-symbols-outlined text-2xl">X</span>
         </button>
+
         <div className="p-10">
           <h3 className="text-3xl font-headline font-bold mb-2">Technical Audit</h3>
           <p className="text-on-surface-variant text-sm mb-8">
-            Tell us about your project requirements and we'll reach out within 24 hours.
+            Tell us about your project requirements and we&apos;ll reach out within 24 hours.
           </p>
-          <form className="space-y-5">
+
+          <form className="space-y-5" onSubmit={handleSubmit}>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
               <div className="space-y-2">
                 <label className="text-xs uppercase tracking-widest font-bold text-primary">
                   Full Name
                 </label>
                 <input
-                  className="w-full bg-surface-container-lowest border border-outline-variant/20 px-4 py-3 text-on-surface focus:outline-none focus:border-primary transition-colors rounded-DEFAULT"
+                  required
+                  name="fullName"
+                  className="w-full bg-surface-container-lowest border border-outline-variant/20 px-4 py-3 text-on-surface focus:outline-none focus:border-primary transition-colors rounded"
                   placeholder="Jane Doe"
                   type="text"
+                  value={fields.fullName}
+                  onChange={handleChange}
+                  disabled={sending}
                 />
               </div>
+
               <div className="space-y-2">
                 <label className="text-xs uppercase tracking-widest font-bold text-primary">
                   Phone Number
                 </label>
                 <input
-                  className="w-full bg-surface-container-lowest border border-outline-variant/20 px-4 py-3 text-on-surface focus:outline-none focus:border-primary transition-colors rounded-DEFAULT"
+                  required
+                  name="phoneNumber"
+                  className="w-full bg-surface-container-lowest border border-outline-variant/20 px-4 py-3 text-on-surface focus:outline-none focus:border-primary transition-colors rounded"
                   placeholder="+1 (555) 000-0000"
                   type="tel"
+                  value={fields.phoneNumber}
+                  onChange={handleChange}
+                  disabled={sending}
                 />
               </div>
             </div>
+
             <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
               <div className="space-y-2">
                 <label className="text-xs uppercase tracking-widest font-bold text-primary">
                   Email Address
                 </label>
                 <input
-                  className="w-full bg-surface-container-lowest border border-outline-variant/20 px-4 py-3 text-on-surface focus:outline-none focus:border-primary transition-colors rounded-DEFAULT"
+                  required
+                  name="emailAddress"
+                  className="w-full bg-surface-container-lowest border border-outline-variant/20 px-4 py-3 text-on-surface focus:outline-none focus:border-primary transition-colors rounded"
                   placeholder="jane@company.com"
                   type="email"
+                  value={fields.emailAddress}
+                  onChange={handleChange}
+                  disabled={sending}
                 />
               </div>
+
               <div className="space-y-2">
                 <label className="text-xs uppercase tracking-widest font-bold text-primary">
                   Location
                 </label>
                 <input
-                  className="w-full bg-surface-container-lowest border border-outline-variant/20 px-4 py-3 text-on-surface focus:outline-none focus:border-primary transition-colors rounded-DEFAULT"
+                  required
+                  name="location"
+                  className="w-full bg-surface-container-lowest border border-outline-variant/20 px-4 py-3 text-on-surface focus:outline-none focus:border-primary transition-colors rounded"
                   placeholder="City, Country"
                   type="text"
+                  value={fields.location}
+                  onChange={handleChange}
+                  disabled={sending}
                 />
               </div>
             </div>
+
             <div className="space-y-2">
               <label className="text-xs uppercase tracking-widest font-bold text-primary">
                 Describe your idea or problem
               </label>
               <textarea
-                className="w-full bg-surface-container-lowest border border-outline-variant/20 px-4 py-3 text-on-surface focus:outline-none focus:border-primary transition-colors rounded-DEFAULT resize-none"
+                required
+                name="message"
+                className="w-full bg-surface-container-lowest border border-outline-variant/20 px-4 py-3 text-on-surface focus:outline-none focus:border-primary transition-colors rounded resize-none"
                 placeholder="Share a few details about what you're looking to build..."
-              ></textarea>
+                rows={6}
+                value={fields.message}
+                onChange={handleChange}
+                disabled={sending}
+              />
             </div>
-            <button
-              className="w-full bg-primary text-on-primary py-4 font-bold text-lg hover:shadow-[0_0_20px_rgba(56,189,248,0.4)] transition-all mt-4"
-              type="submit"
-            >
-              Submit Request
-            </button>
+
+            <div className="space-y-3 pt-2">
+              <button
+                className="w-full bg-primary text-on-primary py-4 font-bold text-lg hover:shadow-[0_0_20px_rgba(56,189,248,0.4)] transition-all"
+                type="submit"
+                disabled={sending}
+              >
+                {sending ? "Sending..." : "Submit Request"}
+              </button>
+              {result === "success" && <div className="text-green-400 text-sm">Message sent!</div>}
+              {result === "error" && (
+                <div className="text-red-400 text-sm">There was an error. Try again?</div>
+              )}
+            </div>
           </form>
         </div>
       </div>
