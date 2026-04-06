@@ -37,7 +37,7 @@ export default function CircularLifecycle() {
 
         {/* Mobile Stacked */}
         <div className="lg:hidden flex flex-col gap-12">
-          {Cycles.map((step, i) => (
+          {Cycles.map((step) => (
             <div
               key={step.title}
               className="flex flex-col items-center text-center p-6 bg-surface-container/30 border border-outline-variant/10 rounded-xl"

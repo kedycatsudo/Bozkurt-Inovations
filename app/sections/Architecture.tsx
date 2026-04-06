@@ -1,4 +1,5 @@
 "use client";
+import Image from "next/image";
 import { useState } from "react";
 import ContactForm from "../components/modals/ContactForm";
 export default function ArchitectureSection() {
@@ -46,10 +47,12 @@ export default function ArchitectureSection() {
         </div>
         <div className="relative lg:h-[600px] hidden lg:block">
           <div className="absolute inset-0 bg-gradient-to-tr from-surface-container-low to-transparent rounded-xl overflow-hidden border border-outline-variant/20">
-            <img
+            <Image
               alt="A high-tech, minimalist 3D illustration of a complex system architecture"
-              className="w-full h-full object-cover mix-blend-lighten opacity-80"
+              className="object-cover mix-blend-lighten opacity-80"
               src="https://lh3.googleusercontent.com/aida-public/AB6AXuCcJE5KTWN8Vm7Wluce2C_IMonGsOgJoPtCJRm9yNrCXqOAR6afzbsghs3sOxO4YyJCK3pKMYsWB3QbZvCxM--eeZJt8GGrNKnu8mk2WVoBnHH0jMjFOxoGqCNXinO-7yYhpM2Z17czxzRnujpccEW_MHsrWOG8ij0XN-vb6h1u5EWRjMdyKb4LofqWula6ngSkQJTwxmUnpr1xxSj23K8efk-cxisjLdZgecxZ38SuooZrXGXGkTeYe-xd5-wHtziLwd8wVz_tsmGg"
+              fill
+              sizes="(max-width: 1024px) 0px, 50vw"
             />
           </div>
           <div className="absolute -bottom-6 -left-6 p-8 bg-surface-container-high/90 backdrop-blur-xl border-l-4 border-primary shadow-2xl">
