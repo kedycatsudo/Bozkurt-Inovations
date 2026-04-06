@@ -1,6 +1,6 @@
 # Bozkurt-Inovations Web App
 
-Production-ready portfolio and lead-capture website for Bozkurt-Inovations, built with Next.js App Router, React 19, TypeScript, and Tailwind CSS.
+Production-ready portfolio and lead-capture website for Bozkurt-Innovations, built with Next.js App Router, React 19, TypeScript, and Tailwind CSS.
 
 This project showcases service offerings, development lifecycle, and includes a working contact flow that sends consultation requests by email through an API route.
 
@@ -173,4 +173,4 @@ npm run format:check
 
 ## Brand and Content Ownership
 
-This codebase and content are tailored for Bozkurt-Inovations.
+This codebase and content are tailored for Bozkurt-Innovations.
